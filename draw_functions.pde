@@ -1,3 +1,8 @@
+/**
+
+  Original algorithm found in "Processing Creative Coding and Computational Art" of Ira Greenberg (http://www.iragreenberg.com)
+*/
+
 void drawLines() {
   // stop drawing at the bottom of the sketch window
   if (y<height-margin) {
