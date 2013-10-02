@@ -27,7 +27,7 @@ static final int TRIANG = 3;
 int drawingType =1;
 
 void setup() {
-  size(800, 600, P3D);
+  size(1300, 800,P3D);
   background(0);
   stroke(255);
   noFill();

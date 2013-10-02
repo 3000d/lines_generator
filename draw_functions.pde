@@ -67,18 +67,21 @@ void drawFrame() {
 }
 void drawTriangles() {
   if (y>height-margin/2)return;
-  beginShape(TRIANGLE);
-  float mx, my;
+  // beginShape(TRIANGLE);
+  float mx, my, mx1,my1;
+  //x+=random(-18,18);
   for (float i=margin/2;i<width-margin/2;i+=step) {
     // for(float i = margin/2;i<width;i+=20){
     for (float j =1; j<4;j++) {
-      vertex(x,y);
+      
       mx = x+cos(radians(angle))*amplitude;
       my = y+sin(radians(angle))*amplitude;
-      vertex(mx, my);
-      mx = x - cos(PI)*amplitude;
-      my=y-sin(PI)*amplitude;
-      vertex(mx, my);
+      line(x,y,mx,my);
+      
+      mx1 = x - cos(PI)*amplitude;
+      my1=y-sin(PI)*amplitude;
+      line(mx,my,mx1,my1);
+      line(mx1, my1,x,y);
     }
     x+=step;
     angle+=frequency;
@@ -86,7 +89,8 @@ void drawTriangles() {
   angle=0;
   x = margin/2;
   y+=waveGap;
-  endShape();
+  // endShape(CLOSE);
   drawTriangles();
 }
+
 
